@@ -14,9 +14,10 @@ strategy:
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
+# steps:
 
   # - script: echo $(image) $(dotnetcore)
   #   displayName: 'echo command'
-  - bash: |
-           echo $(image) $(dotnetcore)
+  
+steps:
+- template: job.yaml
