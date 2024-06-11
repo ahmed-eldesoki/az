@@ -1,0 +1,15 @@
+parameters:
+  - name: variableFile
+    type: string
+
+jobs:
+- job: Build
+  pool:
+    vmImage: 'ubuntu-latest'
+  variables:
+  - template: ${{ parameters.variableFile }}
+  steps:
+  - script: echo $(variable1)
+    displayName: 'Print variable1'
+  - script: echo $(variable2)
+    displayName: 'Print variable2'
