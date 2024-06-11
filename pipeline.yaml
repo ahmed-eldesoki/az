@@ -10,6 +10,6 @@ stages:
           variableFile: variables1.yaml
         variablesSet2:
           variableFile: variables2.yaml
-    template: joby.yaml
+    - template: joby.yaml
     parameters:
       variableFile: ${{ matrix.variableFile }}
