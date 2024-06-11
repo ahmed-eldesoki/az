@@ -6,9 +6,9 @@ strategy:
     'Ubuntu 16.04':
       image: 'ubuntu-16.04'
       dotnetcore: '2.2.x'
-    'Ubuntu 18.04':
-      image: 'ubuntu-18.04'
-      dotnetcore: '3.1.x'
+    # 'Ubuntu 18.04':
+    #   image: 'ubuntu-18.04'
+    #   dotnetcore: '3.1.x'
   
 
 pool:
@@ -16,5 +16,7 @@ pool:
 
 steps:
 
-  - script: echo $(image) $(dotnetcore)
-    displayName: 'echo command'
+  # - script: echo $(image) $(dotnetcore)
+  #   displayName: 'echo command'
+  - bash: |
+    echo $(image) $(dotnetcore)
