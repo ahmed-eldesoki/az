@@ -19,4 +19,4 @@ steps:
   # - script: echo $(image) $(dotnetcore)
   #   displayName: 'echo command'
   - bash: |
-    echo $(image) $(dotnetcore)
+           echo $(image) $(dotnetcore)
