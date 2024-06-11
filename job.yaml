@@ -1,2 +1,3 @@
-- bash: |
-          echo $(image) $(dotnetcore)
+steps: 
+  - bash: |
+            echo $(image) $(dotnetcore)
