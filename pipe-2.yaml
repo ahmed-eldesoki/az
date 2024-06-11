@@ -27,5 +27,5 @@ pool:
 
 steps:
 
-  - bash: |
-      echo $image $dotnetcore
+  - script: echo $(image) $(dotnetcore)
+    displayName: 'echo command'
