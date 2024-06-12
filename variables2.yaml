@@ -1,3 +1,5 @@
 variables:
-  variable1: value1b
-  variable2: value2b
+  - name: variable3
+    value: value3
+  - name: variable4
+    value: value4

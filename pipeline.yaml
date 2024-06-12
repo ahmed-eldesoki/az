@@ -1,15 +1,26 @@
-trigger: none
+trigger:
+  - none
 
-stages:
-- stage: BuildStage
-  jobs:
-  - job: RunWithVariables
+variables:
+  - name: variableFiles
+    value: |
+      variables1.yml
+      variables2.yml
+
+jobs:
+  - job: Build
+    pool:
+      vmImage: 'ubuntu-latest'
     strategy:
       matrix:
-        variablesSet1:
-          variableFile: variables1.yaml
-        variablesSet2:
-          variableFile: variables2.yaml
-    - template: joby.yaml
-    parameters:
-      variableFile: ${{ matrix.variableFile }}
+        variables1: { variableFile: 'variables1.yml' }
+        variables2: { variableFile: 'variables2.yml' }
+    steps:
+      - template: $(variableFile)  # Use the variable file for each matrix entry
+      - script: |
+          echo "Printing variables from $(variableFile)"
+          echo "variable1: $(variable1)"
+          echo "variable2: $(variable2)"
+          echo "variable3: $(variable3)"
+          echo "variable4: $(variable4)"
+        displayName: 'Print variables'
