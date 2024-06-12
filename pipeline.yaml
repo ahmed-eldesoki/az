@@ -16,7 +16,7 @@ jobs:
         variables1: { variableFile: 'variables1.yaml' }
         variables2: { variableFile: 'variables2.yaml' }
     steps:
-      - template: $(variableFile)  # Use the variable file for each matrix entry
+      # - template: $(variableFile)  # Use the variable file for each matrix entry
       - script: |
           echo "Printing variables from $(variableFile)"
           echo "variable1: $(variable1)"
